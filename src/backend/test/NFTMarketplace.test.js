@@ -118,7 +118,7 @@ describe("AfroNFTMarketplace", function() {
           // Seller should receive payment for the price of the NFT sold.
           expect(+fromWei(sellerFinalEthBal)).to.equal(+price + +fromWei(sellerInitalEthBal))
           // feeAccount should receive fee
-          //expect(+fromWei(feeAccountFinalEthBal)).to.equal(+fee + +fromWei(feeAccountInitialEthBal))
+          expect(+fromWei(feeAccountFinalEthBal)).to.equal(+fee + +fromWei(feeAccountInitialEthBal))
           // The buyer should now own the nft
           expect(await nft.ownerOf(1)).to.equal(addr2.address);
         })
